@@ -1,0 +1,722 @@
+[
+    {
+        "nom_cas": "Cas 1 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 100.0% | network_receive_bytes_total: 165254542.1 | tcp_curr_estab: 14250 | timestamp: 1782900315.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900315.4,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782900315.5,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"185.220.101.5\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"5a9a7dc11ae9437bab96386449d73130\",\"spanID\":\"e91def90c3d94d02\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14024,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 2 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 100.0% | network_receive_bytes_total: 150921391.7 | tcp_curr_estab: 14250 | timestamp: 1782900630.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900630.8,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782900630.8999999,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"185.220.101.5\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"2b5921acbb2743bd9ad9c40004b4c38f\",\"spanID\":\"e1a84c372af54f55\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14534,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 3 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.0% | network_receive_bytes_total: 148662741.7 | tcp_curr_estab: 14250 | timestamp: 1782900946.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900946.2,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782900946.3,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"194.26.29.11\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"ce3461c84f41427c8fe4fd3644cad18b\",\"spanID\":\"e494777ee3cb4817\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14758,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 4 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 98.8% | network_receive_bytes_total: 191567226.0 | tcp_curr_estab: 14250 | timestamp: 1782901261.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901261.6,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782901261.6999998,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"103.149.1.208\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"2bcfa3f5b7794c92bea8ef46a047b238\",\"spanID\":\"89331ab47f4a4dd0\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":11151,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 5 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.3% | network_receive_bytes_total: 186982523.4 | tcp_curr_estab: 14250 | timestamp: 1782901577.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901577.0,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782901577.1,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"178.62.204.99\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"ffb788ef7e454e698f06a0422e71325c\",\"spanID\":\"24e951f474ed447f\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14459,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 6 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.0% | network_receive_bytes_total: 173343262.6 | tcp_curr_estab: 14250 | timestamp: 1782901892.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901892.4,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782901892.5,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"178.62.204.99\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"d61ab3254c5b41da9d6246a38c64dbf2\",\"spanID\":\"9a8ae6126e6f48da\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14261,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 7 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.9% | network_receive_bytes_total: 152134481.4 | tcp_curr_estab: 14250 | timestamp: 1782902207.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902207.8,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782902207.8999999,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"194.26.29.11\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"83dc52bd715f44bcadc7d87851816ae2\",\"spanID\":\"259d1ca95e944f8a\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":15383,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 8 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.6% | network_receive_bytes_total: 187450549.2 | tcp_curr_estab: 14250 | timestamp: 1782902523.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902523.2,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782902523.3,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"188.2.1.194\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"a86bcff1716545e5ae32160bf9ca035d\",\"spanID\":\"da5f5a04a6e34925\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":12765,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 9 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.8% | network_receive_bytes_total: 187253083.5 | tcp_curr_estab: 14250 | timestamp: 1782902838.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902838.6,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782902838.6999998,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"154.12.1.136\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"b7dfb8793f42414fb3b8ddc94cee16e1\",\"spanID\":\"0d825763a99a4885\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":11242,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 10 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 98.8% | network_receive_bytes_total: 157060988.1 | tcp_curr_estab: 14250 | timestamp: 1782903154.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903154.0,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782903154.1,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"185.220.101.5\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"456e19db47c148da9eefc15d631094e9\",\"spanID\":\"644fc81d14dd4326\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":12454,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 11 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.2% | network_receive_bytes_total: 180384496.1 | tcp_curr_estab: 14250 | timestamp: 1782903469.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903469.4,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782903469.5,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"188.2.1.194\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"63ff53ed085e48449e00360ea3ad8288\",\"spanID\":\"bc2ee076252b40df\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":11558,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 12 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.3% | network_receive_bytes_total: 202214359.4 | tcp_curr_estab: 14250 | timestamp: 1782903784.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903784.8,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782903784.8999999,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"178.62.204.99\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"52451cec2aaf47c98ddeda1d5f179ebd\",\"spanID\":\"58bd612032c44c19\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14631,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 13 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.4% | network_receive_bytes_total: 167287653.6 | tcp_curr_estab: 14250 | timestamp: 1782904100.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904100.2,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782904100.3,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"188.2.1.194\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"b1dcb6be535b492caf32e0b126c65f6f\",\"spanID\":\"b81c59fcad974698\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":10286,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 14 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.5% | network_receive_bytes_total: 186495060.0 | tcp_curr_estab: 14250 | timestamp: 1782904415.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904415.6,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782904415.6999998,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"103.149.1.208\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"446e240c039648a28909ab1af5e0ecc4\",\"spanID\":\"e16a72301bee4654\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":12466,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 15 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.1% | network_receive_bytes_total: 154708392.7 | tcp_curr_estab: 14250 | timestamp: 1782904731.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904731.0,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782904731.1,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"188.2.1.194\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"33b10c5e9d204b1a9ea3e03b558071ab\",\"spanID\":\"b9e0df23e37c49a2\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":13505,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 16 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.7% | network_receive_bytes_total: 191060277.3 | tcp_curr_estab: 14250 | timestamp: 1782905046.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782905046.4,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782905046.5,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"178.62.204.99\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"ff93374c49f9423699912497f62b2351\",\"spanID\":\"ad7202de6372469a\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":13195,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 17 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.1% | network_receive_bytes_total: 146306414.9 | tcp_curr_estab: 14250 | timestamp: 1782905361.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782905361.8,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782905361.8999999,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"185.220.101.5\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"71df2b46fbe94fa5900d405ea5258688\",\"spanID\":\"d742bd3d5f0d41bb\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14654,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 18 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.3% | network_receive_bytes_total: 172492033.2 | tcp_curr_estab: 14250 | timestamp: 1782905677.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782905677.2,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782905677.3,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"154.12.1.136\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"1a2eebb97f5c4e479e21e8c930aa3fe7\",\"spanID\":\"933634fcc38545b8\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":11286,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 19 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 99.5% | network_receive_bytes_total: 155939284.8 | tcp_curr_estab: 14250 | timestamp: 1782905992.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782905992.6,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782905992.6999998,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"89.187.160.14\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"40730d48fd614ff0b31e74a5763c497c\",\"spanID\":\"3b413092d44f4c69\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":10425,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 20 - frontend (Attaque (DDoS Volumétrique))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: frontend | cpu_usage_seconds_total: 98.9% | network_receive_bytes_total: 165904428.3 | tcp_curr_estab: 14250 | timestamp: 1782906308.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782906308.0,\"level\":\"error\",\"caller\":\"main.go:142\",\"msg\":\"error while proxying request\",\"error\":\"rpc error: code = ResourceExhausted desc = grpc: out of memory / socket: too many open files\"}\n{\"ts\":1782906308.1,\"level\":\"warn\",\"caller\":\"middleware.go:84\",\"msg\":\"upstream connection timed out\",\"client_ip\":\"89.187.160.14\",\"status\":503}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"c4d08898b60f4e3ab2826c6c7f13c0c8\",\"spanID\":\"d8bd71603d5240a8\",\"serviceName\":\"frontend\",\"operationName\":\"ingress.HTTP/GET\",\"durationMs\":14318,\"http.status_code\":503,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "frontend",
+            "type_panne": "Attaque (DDoS Volumétrique)",
+            "raison": "L'augmentation massive du trafic entrant (rx_bytes) et la saturation du cgroup CPU ont provoqué un épuisement des sockets TCP et des erreurs gRPC ResourceExhausted (HTTP 503)."
+        }
+    },
+    {
+        "nom_cas": "Cas 21 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 14.0% | network_receive_bytes_total: 21417.6 | tcp_curr_estab: 42 | timestamp: 1782900240.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900240.2,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782900240.25,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"9865a49ad49440ca80737a6927131096\",\"spanID\":\"e0d51635f0954f1f\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":17,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 22 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 15.7% | network_receive_bytes_total: 22568.8 | tcp_curr_estab: 42 | timestamp: 1782900480.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900480.4,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"178.62.204.99\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782900480.45,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"178.62.204.99\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"edd1350187014c84a138f04390f07875\",\"spanID\":\"38b220c5641f4d7c\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":38,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 23 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 14.6% | network_receive_bytes_total: 34369.0 | tcp_curr_estab: 42 | timestamp: 1782900720.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900720.6,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782900720.6499999,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"16aace89e8714824ade671b24e9d8b58\",\"spanID\":\"f9ab173fda754780\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":25,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 24 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 13.8% | network_receive_bytes_total: 17139.4 | tcp_curr_estab: 42 | timestamp: 1782900960.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900960.8,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"administrator\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782900960.85,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"administrator\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"49e3d75ce2bd47e4ba897fc09c8db2a3\",\"spanID\":\"06758df9741e4905\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":35,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 25 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 16.5% | network_receive_bytes_total: 27229.3 | tcp_curr_estab: 42 | timestamp: 1782901201.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901201.0,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782901201.05,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"3c4e150eefa043c18b38d2cdc0af48fa\",\"spanID\":\"d8d82acb93564e1e\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":31,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 26 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 13.1% | network_receive_bytes_total: 16279.6 | tcp_curr_estab: 42 | timestamp: 1782901441.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901441.2,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"188.2.1.194\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782901441.25,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"188.2.1.194\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"036a5b9273ff48e4bd7dc695b2f3a884\",\"spanID\":\"258e93c8a8e44f26\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":27,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 27 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 14.3% | network_receive_bytes_total: 12869.5 | tcp_curr_estab: 42 | timestamp: 1782901681.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901681.4,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782901681.45,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"e24a234eba8e433c9ec63749cd6bb642\",\"spanID\":\"d5457c679d51497e\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":37,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 28 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 13.4% | network_receive_bytes_total: 25620.1 | tcp_curr_estab: 42 | timestamp: 1782901921.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901921.6,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782901921.6499999,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"da92c0e9b6f74f899450cc549557b218\",\"spanID\":\"fa02ee69edfa4cf6\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":35,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 29 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 16.8% | network_receive_bytes_total: 23591.3 | tcp_curr_estab: 42 | timestamp: 1782902161.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902161.8,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782902161.85,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"69c14fe905534be3abfb6439176f5cf5\",\"spanID\":\"157a5fb6b2a242b5\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":35,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 30 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 12.1% | network_receive_bytes_total: 20785.0 | tcp_curr_estab: 42 | timestamp: 1782902402.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902402.0,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782902402.05,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"2f25fd94f87947168a325b57ffd79e0e\",\"spanID\":\"174f652e4090448d\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":38,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 31 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 14.6% | network_receive_bytes_total: 31353.3 | tcp_curr_estab: 42 | timestamp: 1782902642.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902642.2,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782902642.25,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"1619f053ed214a15a83ac2b475f7413b\",\"spanID\":\"50ee58b7bfae43b0\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":33,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 32 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 17.1% | network_receive_bytes_total: 27690.2 | tcp_curr_estab: 42 | timestamp: 1782902882.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902882.4,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782902882.45,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"16649d6f52c5425a9804ad844d4d088c\",\"spanID\":\"dd9f76dc7a314289\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":13,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 33 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 16.4% | network_receive_bytes_total: 33214.0 | tcp_curr_estab: 42 | timestamp: 1782903122.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903122.6,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"service_account\",\"client_ip\":\"45.83.64.12\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782903122.6499999,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"service_account\",\"client_ip\":\"45.83.64.12\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"0ffdab33cf50486aaf0aa41704712e64\",\"spanID\":\"1e029f1ce83d4579\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":25,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 34 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 13.2% | network_receive_bytes_total: 34105.1 | tcp_curr_estab: 42 | timestamp: 1782903362.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903362.8,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782903362.85,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"185.220.101.5\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"ad8c31d90ce144edbf0a3af26d5f9136\",\"spanID\":\"5ecc9c49ba4f4103\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":28,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 35 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 18.0% | network_receive_bytes_total: 28006.7 | tcp_curr_estab: 42 | timestamp: 1782903603.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903603.0,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"45.83.64.12\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782903603.05,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"45.83.64.12\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"6e113b8f278448e595bc73afbdcdd898\",\"spanID\":\"405f556d5a9c4bb5\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":19,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 36 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 11.9% | network_receive_bytes_total: 34118.1 | tcp_curr_estab: 42 | timestamp: 1782903843.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903843.2,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"194.26.29.11\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782903843.25,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"194.26.29.11\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"9577a85b1f4d44a281e85fac8758449d\",\"spanID\":\"4fb754863a064ab4\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":29,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 37 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 14.3% | network_receive_bytes_total: 12064.6 | tcp_curr_estab: 42 | timestamp: 1782904083.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904083.4,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"178.62.204.99\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782904083.45,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"root\",\"client_ip\":\"178.62.204.99\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"5b423fcd65c7427abe0ee18859da0c84\",\"spanID\":\"bcfa21309cff4419\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":15,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 38 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 11.5% | network_receive_bytes_total: 33232.2 | tcp_curr_estab: 42 | timestamp: 1782904323.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904323.6,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"administrator\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782904323.6499999,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"administrator\",\"client_ip\":\"103.149.1.208\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"ed1e5eaffb7f4f5faeca8a06956156cc\",\"spanID\":\"e2871b1f90ca4c8e\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":15,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 39 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 12.7% | network_receive_bytes_total: 23563.4 | tcp_curr_estab: 42 | timestamp: 1782904563.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904563.8,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782904563.85,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"admin\",\"client_ip\":\"154.12.1.136\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"2b55072aad204b2baf5d5ac050b16030\",\"spanID\":\"488c3dd0463e42cb\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":30,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 40 - checkoutservice (Attaque (Brute Force))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 17.5% | network_receive_bytes_total: 33902.9 | tcp_curr_estab: 42 | timestamp: 1782904804.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904804.0,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"194.26.29.11\",\"grpc.code\":\"Unauthenticated\"}\n{\"ts\":1782904804.05,\"level\":\"warn\",\"caller\":\"handler.go:88\",\"msg\":\"user authentication failed\",\"user_id\":\"test_user\",\"client_ip\":\"194.26.29.11\",\"grpc.code\":\"Unauthenticated\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"aee98f7be2c5454a88a238979f006a37\",\"spanID\":\"56610b0d27034327\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":17,\"grpc.status_code\":16,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (Brute Force)",
+            "raison": "L'apparition répétée d'échecs d'authentification (gRPC Unauthenticated / Code 16) à faible latence depuis la même adresse IP indique une tentative d'énumération d'identifiants."
+        }
+    },
+    {
+        "nom_cas": "Cas 41 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 44.7% | memory_working_set_bytes: 210MiB | timestamp: 1782900180.7\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"admin' -\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"admin' --\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"071e448e8c1446d3838364d8f693ad72\",\"spanID\":\"be607fb8f9fd4c39\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1903,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 42 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 42.4% | memory_working_set_bytes: 202MiB | timestamp: 1782900361.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' OR '1'\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' OR '1'='1\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"e3e8700428844346b34cacb81d015f1b\",\"spanID\":\"3f4865957ced4222\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1331,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 43 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 42.5% | memory_working_set_bytes: 196MiB | timestamp: 1782900542.1\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"1' OR '1\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"1' OR '1'='1' /*\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"558c8a536c8241c1886a18f20079a3cf\",\"spanID\":\"5c7618c90b104557\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1845,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 44 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 40.5% | memory_working_set_bytes: 223MiB | timestamp: 1782900722.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' OR '1'\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' OR '1'='1\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"dbbaa909590c4eb390ffd000ec54a285\",\"spanID\":\"04bf3168adf34ac5\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1161,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 45 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 49.6% | memory_working_set_bytes: 233MiB | timestamp: 1782900903.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"'; DROP \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"'; DROP TABLE orders;--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"7191bc3ae3894da2bdc4a62d0c0b5ef5\",\"spanID\":\"23052de1f3d946de\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":2120,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 46 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 51.9% | memory_working_set_bytes: 210MiB | timestamp: 1782901084.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"admin' -\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"admin' --\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"06d7682ce19a472fb538acfde3a21271\",\"spanID\":\"3659d9fe9a6b4838\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1901,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 47 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 39.5% | memory_working_set_bytes: 196MiB | timestamp: 1782901264.9\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"'; DROP \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"'; DROP TABLE orders;--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"d6af4453f5734e13a4c88c4db1a235b8\",\"spanID\":\"052aa460fa404ad5\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":2019,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 48 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 50.0% | memory_working_set_bytes: 225MiB | timestamp: 1782901445.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' UNION \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' UNION SELECT * FROM users--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"93d7e4424e3447e09e0b9330e343a517\",\"spanID\":\"6b1710eadf934c67\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":2143,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 49 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 44.3% | memory_working_set_bytes: 219MiB | timestamp: 1782901626.3\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"'; DROP \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"'; DROP TABLE orders;--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"1278ef0835884fe98e93c5a1b721a74b\",\"spanID\":\"ea61435f83da489f\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1630,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 50 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 42.7% | memory_working_set_bytes: 214MiB | timestamp: 1782901807.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"admin' -\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"admin' --\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"49a481d940dd443eaa6d3ef910a9e12c\",\"spanID\":\"c617a19cc2154e16\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1651,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 51 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 45.8% | memory_working_set_bytes: 229MiB | timestamp: 1782901987.7\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' OR '1'\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' OR '1'='1\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"0b2953ee09964609a871f6ed95ad78b6\",\"spanID\":\"f9bf377a18b84c81\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1474,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 52 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 38.6% | memory_working_set_bytes: 224MiB | timestamp: 1782902168.4\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"'; DROP \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"'; DROP TABLE orders;--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"c11188b9b2e741bb8883268787fc87e0\",\"spanID\":\"0cd3690b67844813\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1172,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 53 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 44.4% | memory_working_set_bytes: 205MiB | timestamp: 1782902349.1\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' OR '1'\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' OR '1'='1\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"b3e1e25045984e76a64688893e81059f\",\"spanID\":\"f32cb58c233d41c1\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1265,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 54 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 51.8% | memory_working_set_bytes: 226MiB | timestamp: 1782902529.8\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"'; DROP \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"'; DROP TABLE orders;--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"0832a9882cb2415db9ae9d0d8dd227ff\",\"spanID\":\"a04417d8019c4af0\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":2059,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 55 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 46.7% | memory_working_set_bytes: 228MiB | timestamp: 1782902710.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' OR '1'\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' OR '1'='1\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"2a145cb492564c419645624586cdd1fb\",\"spanID\":\"99a3980124ed40d5\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1908,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 56 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 45.1% | memory_working_set_bytes: 213MiB | timestamp: 1782902891.2\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' UNION \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' UNION SELECT * FROM users--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"38166e99770646a98a87e80119e20c05\",\"spanID\":\"0132a58ffbaf42d0\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1978,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 57 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 49.6% | memory_working_set_bytes: 234MiB | timestamp: 1782903071.9\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"1' OR '1\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"1' OR '1'='1' /*\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"92cef0e7af704ca8b2451dca32aeda4a\",\"spanID\":\"0e7f81d26f974264\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":2303,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 58 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 45.1% | memory_working_set_bytes: 195MiB | timestamp: 1782903252.6\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"1' OR '1\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"1' OR '1'='1' /*\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"5feb10dccbf246c0889d455ae7b9a797\",\"spanID\":\"d1b62985adde4e4f\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1732,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 59 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 48.0% | memory_working_set_bytes: 235MiB | timestamp: 1782903433.3\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"admin' -\"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"admin' --\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"a350a9195f06463db5a13905479fbd7e\",\"spanID\":\"50a7089896e9444c\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1941,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 60 - cartservice (Attaque (SQL Injection))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: cartservice | cpu_usage_seconds_total: 45.9% | memory_working_set_bytes: 221MiB | timestamp: 1782903614.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n[Error] StackExchange.Redis.RedisServerException: ERR syntax error at or near \"' UNION \"\n   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2841\n[Critical] Unhandled exception in ASP.NET Core request pipeline: payload=\"' UNION SELECT * FROM users--\"\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"5404cab1051a4880ae8482f462c9db81\",\"spanID\":\"3e0d4504914d46a0\",\"serviceName\":\"cartservice\",\"operationName\":\"hipstershop.CartService/AddItem\",\"durationMs\":1635,\"grpc.status_code\":2,\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "cartservice",
+            "type_panne": "Attaque (SQL Injection)",
+            "raison": "Une chaîne malformée contenant des caractères de contrôle SQL/NoSQL a généré une exception de syntaxe dans le driver de base de données (RedisServerException) et une erreur RPC de code 2 (Unknown)."
+        }
+    },
+    {
+        "nom_cas": "Cas 61 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 20.1% | network_transmit_bytes_total: 93462.0 | timestamp: 1782900290.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900290.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\",\"error\":\"Get \\\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"70bfcc913a7149679fb8dd63f3231cd4\",\"spanID\":\"b49d434ed3364017\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5007,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 62 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 22.8% | network_transmit_bytes_total: 90448.2 | timestamp: 1782900581.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900581.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\",\"error\":\"Get \\\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"7fea7bea379149c2907ea287cfc69d54\",\"spanID\":\"28bb644e9a824447\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5008,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 63 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 20.0% | network_transmit_bytes_total: 91478.4 | timestamp: 1782900871.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782900871.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/user-data\",\"error\":\"Get \\\"http://169.254.169.254/latest/user-data\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"e830cdf079b04095b3a39134a3abd313\",\"spanID\":\"94729209acc04f6c\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5003,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 64 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 20.9% | network_transmit_bytes_total: 95024.6 | timestamp: 1782901162.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901162.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/user-data\",\"error\":\"Get \\\"http://169.254.169.254/latest/user-data\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"54a3d486851d4deca18db5f74b0385cf\",\"spanID\":\"85b002d443c64f95\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5000,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 65 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 20.3% | network_transmit_bytes_total: 93326.9 | timestamp: 1782901452.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901452.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\",\"error\":\"Get \\\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"61b0a73eefed4f798424dcc62b6eac92\",\"spanID\":\"7939cf5f781945bc\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5011,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 66 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 27.1% | network_transmit_bytes_total: 91039.8 | timestamp: 1782901743.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782901743.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\",\"error\":\"Get \\\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"fa07f991e8cd45d19044b1a5b2cf7d44\",\"spanID\":\"5afebdc5fd034bce\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5012,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 67 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 27.6% | network_transmit_bytes_total: 96194.1 | timestamp: 1782902033.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902033.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\",\"error\":\"Get \\\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"6b8a64994aef4c77adae3fbfdae868b5\",\"spanID\":\"8290d8b377b44999\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5009,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 68 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 23.2% | network_transmit_bytes_total: 88280.8 | timestamp: 1782902324.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902324.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\",\"error\":\"Get \\\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"ba4d770c83d948a59809bde9c73d23c8\",\"spanID\":\"2d32465779074f37\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5001,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 69 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 24.1% | network_transmit_bytes_total: 94426.3 | timestamp: 1782902614.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902614.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/user-data\",\"error\":\"Get \\\"http://169.254.169.254/latest/user-data\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"cab007435d0941eeae9febed7dd209ef\",\"spanID\":\"3dd5bb34c77345d6\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5008,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 70 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 21.0% | network_transmit_bytes_total: 94363.6 | timestamp: 1782902905.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782902905.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/user-data\",\"error\":\"Get \\\"http://169.254.169.254/latest/user-data\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"a8de3bfeea4c4eb5b95a59c55d34a390\",\"spanID\":\"f7a47c169d2b48c0\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5004,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 71 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 22.4% | network_transmit_bytes_total: 95735.0 | timestamp: 1782903195.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903195.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\",\"error\":\"Get \\\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"4aaadb1ebf494688b6b58ae0bab39074\",\"spanID\":\"b963a544f6b04a30\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5010,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 72 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 25.3% | network_transmit_bytes_total: 88738.3 | timestamp: 1782903486.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903486.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\",\"error\":\"Get \\\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"49b5af8d1bf9437d854b36b05b47eb2f\",\"spanID\":\"f5f1f59c48ff43bd\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5001,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 73 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 24.3% | network_transmit_bytes_total: 91540.5 | timestamp: 1782903776.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782903776.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/user-data\",\"error\":\"Get \\\"http://169.254.169.254/latest/user-data\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"ffe844598ff046fcb59f900f20f5a4a1\",\"spanID\":\"c43d6161bba74a6b\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5000,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 74 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 18.2% | network_transmit_bytes_total: 92154.2 | timestamp: 1782904067.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904067.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\",\"error\":\"Get \\\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"680a0538ab5c4a6f88d20ded2b341e38\",\"spanID\":\"6efecd0cbb714150\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5003,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 75 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 20.8% | network_transmit_bytes_total: 94694.3 | timestamp: 1782904357.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904357.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\",\"error\":\"Get \\\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"9a34a1063d6e4ba08bb3150c43f574e3\",\"spanID\":\"a2ecb36f63fe49bd\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5002,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 76 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 18.9% | network_transmit_bytes_total: 93381.4 | timestamp: 1782904648.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904648.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/user-data\",\"error\":\"Get \\\"http://169.254.169.254/latest/user-data\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"7c4140a429084c1f9d4320402d095f96\",\"spanID\":\"77990c0882f34fac\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5011,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 77 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 23.4% | network_transmit_bytes_total: 90435.5 | timestamp: 1782904938.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782904938.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\",\"error\":\"Get \\\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"68daffa3d3f4468ea6aa74da1daabffb\",\"spanID\":\"706bb50e73de4e12\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5007,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 78 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 21.9% | network_transmit_bytes_total: 93703.7 | timestamp: 1782905229.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782905229.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/user-data\",\"error\":\"Get \\\"http://169.254.169.254/latest/user-data\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"657f7925796c471d90e4a17eee9726e4\",\"spanID\":\"fcbb6f3659874b88\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5008,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 79 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 27.9% | network_transmit_bytes_total: 97362.3 | timestamp: 1782905519.5\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782905519.5,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\",\"error\":\"Get \\\"http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"9261df54bd444b8290205e3e54c336da\",\"spanID\":\"31304f7c6185441c\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5004,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    },
+    {
+        "nom_cas": "Cas 80 - checkoutservice (Attaque (SSRF))",
+        "input": "=== MÉTRIQUES (cAdvisor / Prometheus) ===\ncontainer_name: checkoutservice | cpu_usage_seconds_total: 22.1% | network_transmit_bytes_total: 89864.7 | timestamp: 1782905810.0\n=== LOGS APPLICATIFS (Kubelet / CRI) ===\n{\"ts\":1782905810.0,\"level\":\"error\",\"caller\":\"shipping.go:112\",\"msg\":\"failed to fetch shipping rates from upstream\",\"url\":\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\",\"error\":\"Get \\\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\\\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"}\n=== TRACES (OpenTelemetry / Jaeger) ===\n{\"traceID\":\"694bf511072f4d4a8489c2fd4e6bc840\",\"spanID\":\"30a2bb1ccc1942a0\",\"serviceName\":\"checkoutservice\",\"operationName\":\"hipstershop.CheckoutService/PlaceOrder\",\"durationMs\":5009,\"grpc.status_code\":4,\"rpc.status_message\":\"DeadlineExceeded\",\"error\":true}",
+        "reponse_attendue": {
+            "service_defaillant": "checkoutservice",
+            "type_panne": "Attaque (SSRF)",
+            "raison": "Une tentative de connexion non autorisée vers un point de terminaison d'infrastructure cloud interne (169.254.169.254) a entraîné une expiration de délai (DeadlineExceeded / gRPC code 4)."
+        }
+    }
+]
